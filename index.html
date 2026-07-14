@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Template</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="frame">
+
+        <div class="upload-panel" id="uploadPanel">
+
+            <div class="upload-content" id="uploadContent">
+                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 16V4" />
+                    <path d="M6 10l6-6 6 6" />
+                    <path d="M4 20h16" />
+                </svg>
+                <div class="upload-label">Upload File</div>
+                <div class="upload-sublabel">.html, .css or .js only &mdash; combined in one file or separate, click or
+                    drag here</div>
+                <div class="error-msg" id="errorMsg"></div>
+            </div>
+
+            <div class="preview-wrap" id="previewWrap">
+                <div class="preview-bar">
+                    <div class="preview-meta">
+                        <span class="preview-files" id="previewFiles"></span>
+                        <span class="lock-note">&#128274; Interactions locked</span>
+                        <span class="preview-error" id="previewError"></span>
+                    </div>
+                    <button class="change-file-btn" id="changeFileBtn" type="button">Change file</button>
+                </div>
+                <div class="preview-body">
+                    <iframe class="preview-frame" id="previewFrame" title="Live preview"
+                        sandbox="allow-scripts allow-same-origin"></iframe>
+                    <div class="selection-badge" id="selectionBadge"><span class="dot"></span><span
+                            id="selectionText"></span></div>
+                </div>
+            </div>
+
+            <input type="file" id="fileInput" accept=".html,.htm,.css,.js" multiple>
+        </div>
+
+        <div class="color-panel" id="colorPanel">
+            <div class="color-panel-inner">
+
+                <div class="color-group">
+                    <div class="color-group-title">Color</div>
+                    <div class="swatch-row">
+                        <div class="swatch-item">
+                            <button class="swatch" data-value="#FFFFFF" data-label="White"
+                                style="background:#FFFFFF"></button>
+                            <span class="swatch-label">White</span>
+                        </div>
+                        <div class="swatch-item">
+                            <button class="swatch" data-value="#000000" data-label="Black"
+                                style="background:#000000"></button>
+                            <span class="swatch-label">Black</span>
+                        </div>
+                        <div class="swatch-item">
+                            <button class="swatch" data-value="#1E5FFF" data-label="Blue"
+                                style="background:#1E5FFF"></button>
+                            <span class="swatch-label">Blue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-group">
+                    <div class="color-group-title">Gradient Color</div>
+                    <div class="swatch-row">
+                        <div class="swatch-item">
+                            <button class="swatch" data-value="linear-gradient(135deg,#FFFFFF,#000000)"
+                                data-label="White + Black"
+                                style="background:linear-gradient(135deg,#FFFFFF,#000000)"></button>
+                            <span class="swatch-label">White + Black</span>
+                        </div>
+                        <div class="swatch-item">
+                            <button class="swatch" data-value="linear-gradient(135deg,#000000,#1E5FFF)"
+                                data-label="Black + Blue"
+                                style="background:linear-gradient(135deg,#000000,#1E5FFF)"></button>
+                            <span class="swatch-label">Black + Blue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-group">
+                    <div class="color-group-title">Radial Gradient</div>
+                    <div class="swatch-row">
+                        <div class="swatch-item">
+                            <button class="swatch" data-value="radial-gradient(circle,#FFFFFF,#000000,#1E5FFF)"
+                                data-label="White + Black + Blue"
+                                style="background:radial-gradient(circle,#FFFFFF,#000000,#1E5FFF)"></button>
+                            <span class="swatch-label">White + Black + Blue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-hint" id="colorHint">Upload a template, select a section, then pick a color.</div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
